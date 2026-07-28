@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f4f6f9;
+    color: #1e293b;
+  }
+}
+
+/* Light Theme Card & Panel Styling */
+.ui-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.015);
+  border: 1px solid #e2e8f0;
+}
+
+.ui-input {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.ui-input:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Auto-hiding Scrollbars: Hidden by default, visible on hover */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+*:hover::-webkit-scrollbar-thumb {
+  background: rgba(203, 213, 225, 0.7);
+}
+*:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 1);
+}
+
+/* FullCalendar Custom Theme Overrides matching reference screenshots */
+.fc {
+  --fc-border-color: #f1f5f9;
+  --fc-page-bg-color: #ffffff;
+  --fc-neutral-bg-color: #f8fafc;
+  --fc-list-event-hover-bg-color: #f1f5f9;
+  --fc-today-bg-color: #f0f7ff;
+  --fc-highlight-color: #dbeafe;
+  font-family: inherit;
+}
+
+.fc .fc-toolbar {
+  display: none !important;
+}
+
+/* Header Columns */
+.fc .fc-col-header-cell {
+  background: #ffffff;
+  padding: 8px 4px !important;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.fc .fc-scrollgrid {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.fc-theme-standard td, .fc-theme-standard th {
+  border-color: #f1f5f9 !important;
+}
+
+.fc .fc-timegrid-slot {
+  height: 54px !important;
+  border-bottom: 1px solid #f8fafc !important;
+}
+
+.fc .fc-timegrid-slot-label-cushion {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0 6px !important;
+}
+
+/* Day Number styling in Month grid */
+.fc .fc-daygrid-day-number {
+  color: #334155;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 8px;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 9999px;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px;
+  font-weight: 700;
+}
+
+/* TimeGrid Now Indicator (Current time blue line) */
+.fc .fc-timegrid-now-indicator-line {
+  border-color: #2563eb !important;
+  border-width: 2px !important;
+}
+
+.fc .fc-timegrid-now-indicator-arrow {
+  border-color: #2563eb !important;
+  border-width: 6px !important;
+}
+
+/* Event Card styling */
+.fc-event {
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 0 !important;
+  font-size: 0.8rem !important;
+  cursor: pointer !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.fc-event:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
+  z-index: 10 !important;
+}
+
+.fc-v-event .fc-event-main {
+  color: #1e293b;
+  padding: 0;
+}
