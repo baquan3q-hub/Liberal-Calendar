@@ -5,6 +5,7 @@ export const LOCAL_STORAGE_KEYS = {
   VIEW_MODE: 'liberal_calendar_view_mode',
   FILTER_STATE: 'liberal_calendar_filter_state',
   OFFLINE_EVENTS: 'liberal_calendar_offline_events',
+  MEMBER_NAME: 'liberal_calendar_member_name',
 };
 
 // Clean sample events for shared calendar

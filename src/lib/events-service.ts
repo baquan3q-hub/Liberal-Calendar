@@ -160,7 +160,7 @@ export const eventsService = {
 
     if (isSupabaseConfigured && supabase) {
       try {
-        const { data, error } = await supabase
+        const { error } = await supabase
           .from('events')
           .update(dbUpdates)
           .eq('id', id)

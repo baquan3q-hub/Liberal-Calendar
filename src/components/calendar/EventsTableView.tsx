@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import type { CalendarEvent } from '../../types/database';
 import { format, parseISO } from 'date-fns';
-import { vi } from 'date-fns/locale';
-import { MapPin, Video, User, Clock, ChevronLeft, ChevronRight, Edit3 } from 'lucide-react';
+import { MapPin, Video, User, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface EventsTableViewProps {
   events: CalendarEvent[];
@@ -71,7 +70,7 @@ export const EventsTableView: React.FC<EventsTableViewProps> = ({
       {/* Table Container */}
       <div className="flex-1 overflow-auto">
         <table className="w-full text-left text-xs text-slate-700 border-collapse">
-          {/* Table Header (Matching light blue header row bg-blue-50/60 in reference photo) */}
+          {/* Table Header */}
           <thead>
             <tr className="bg-blue-50/70 border-b border-slate-200 font-bold text-slate-700">
               <th className="p-3.5 w-10 text-center">
@@ -85,7 +84,7 @@ export const EventsTableView: React.FC<EventsTableViewProps> = ({
               <th className="p-3.5 w-12 text-center font-bold text-slate-500">STT</th>
               <th className="p-3.5 font-bold text-slate-900">Tiêu đề sự kiện</th>
               <th className="p-3.5 font-semibold text-slate-700">Thời gian</th>
-              <th className="p-3.5 font-semibold text-slate-700">Địa điểm / Linh họp</th>
+              <th className="p-3.5 font-semibold text-slate-700">Địa điểm / Link họp</th>
               <th className="p-3.5 font-semibold text-slate-700">Trạng thái</th>
               <th className="p-3.5 font-semibold text-slate-700">Người tạo</th>
               <th className="p-3.5 text-center font-semibold text-slate-700 w-24">Thao tác</th>
@@ -161,7 +160,7 @@ export const EventsTableView: React.FC<EventsTableViewProps> = ({
                     <td className="p-3.5 font-medium text-slate-600">
                       <div className="flex items-center gap-1">
                         <User className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                        <span>{evt.created_by_name || 'Hệ thống'}</span>
+                        <span>{(evt as any).created_by_name || 'Hệ thống'}</span>
                       </div>
                     </td>
                     <td className="p-3.5 text-center" onClick={(e) => e.stopPropagation()}>
@@ -180,7 +179,7 @@ export const EventsTableView: React.FC<EventsTableViewProps> = ({
         </table>
       </div>
 
-      {/* Pagination Footer (Matching bottom row in reference photo: "Hiển thị: 10 /14", "< 1 2 >") */}
+      {/* Pagination Footer */}
       <div className="p-3.5 bg-slate-50/60 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
         <div className="flex items-center gap-2">
           <span>Hiển thị:</span>
